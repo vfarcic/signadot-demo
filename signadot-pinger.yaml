@@ -1,0 +1,15 @@
+name: "sandbox-basic"
+spec:
+  cluster: "@{cluster}"
+  forks:
+    - forkOf:
+        kind: Deployment
+        name: pinger
+        namespace: "@{namespace}"
+      customizations:
+        images:
+        - image: c8n.io/vfarcic/pinger:@{tag}
+  defaultRouteGroup:
+    endpoints:
+    - name: pinger-endpoint
+      target: http://pinger.demo.svc:8080

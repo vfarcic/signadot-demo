@@ -1,0 +1,26 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    description: This is pinger
+    language: Go
+    owner: Viktor Farcic (viktor@farcic.com)
+    team: dot
+  labels:
+    app.kubernetes.io/name: pinger
+  name: pinger
+  namespace: demo
+spec:
+  ingressClassName: "traefik"
+  rules:
+    - host: pinger.212.2.242.43.nip.io
+      http:
+        paths:
+          - backend:
+              service:
+                name: pinger
+                port:
+                  number: 8080
+            path: /
+            pathType: ImplementationSpecific
