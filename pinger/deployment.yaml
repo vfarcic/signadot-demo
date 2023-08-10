@@ -18,6 +18,8 @@ spec:
       app.kubernetes.io/name: pinger
   template:
     metadata:
+      annotations:
+        sidecar.signadot.com/inject: "http"
       labels:
         app.kubernetes.io/name: pinger
     spec:
