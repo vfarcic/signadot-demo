@@ -1,0 +1,12 @@
+name: pinger-local
+spec:
+  cluster: "@{cluster}"
+  local:
+    - name: pinger-local
+      from:
+        kind: Deployment
+        name: pinger
+        namespace: "@{namespace}"
+      mappings:
+        - port: 8080
+          toLocal: "localhost:8080"  

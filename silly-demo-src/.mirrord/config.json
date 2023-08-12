@@ -1,0 +1,19 @@
+{
+    "target": {
+      "path": "deployment/silly-demo",
+      "namespace": "demo"
+    },
+    "agent": {
+        "namespace": "demo"
+    },
+    "feature": {
+        "network": {
+            "incoming": {
+                "mode": "steal",
+                "http_filter": {
+                    "ports": [8080]
+                }
+            }
+        }
+    }
+}

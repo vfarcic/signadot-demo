@@ -1,4 +1,4 @@
-name: "sandbox-basic"
+name: pinger
 spec:
   cluster: "@{cluster}"
   forks:

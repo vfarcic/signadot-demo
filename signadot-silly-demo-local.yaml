@@ -1,0 +1,16 @@
+name: silly-demo-local
+spec:
+  cluster: "@{cluster}"
+  local:
+    - name: silly-demo-local
+      from:
+        kind: Deployment
+        name: silly-demo
+        namespace: "@{namespace}"
+      mappings:
+        - port: 8080
+          toLocal: "localhost:8080"  
+  defaultRouteGroup:
+    endpoints:
+    - name: pinger
+      target: http://pinger.demo.svc:8080

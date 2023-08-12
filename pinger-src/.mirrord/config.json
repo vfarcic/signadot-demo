@@ -1,0 +1,9 @@
+{
+    "target": {
+      "path": "deployment/pinger",
+      "namespace": "demo"
+    },
+    "agent": {
+        "namespace": "demo"
+    }
+}
