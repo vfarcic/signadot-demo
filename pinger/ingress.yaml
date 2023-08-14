@@ -14,7 +14,7 @@ metadata:
 spec:
   ingressClassName: "traefik"
   rules:
-    - host: pinger.212.2.245.129.nip.io
+    - host: pinger.212.2.243.227.nip.io
       http:
         paths:
           - backend:

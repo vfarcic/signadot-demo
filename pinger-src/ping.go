@@ -11,7 +11,7 @@ import (
 )
 
 func pingHandler(ctx *gin.Context) {
-	req := resty.New().R().SetHeader("Content-Type", "application/text")
+	req := resty.New().R().SetHeaderMultiValues(ctx.Request.Header).SetHeader("Content-Type", "application/text")
 	url := ctx.Query("url")
 	if len(url) == 0 {
 		url = os.Getenv("PING_URL")
